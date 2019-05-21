@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     showMenu() {
-      alert(1234);
+      this.isShowMenu = true;
     }
   }
 };
