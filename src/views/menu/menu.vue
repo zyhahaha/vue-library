@@ -8,7 +8,8 @@
           </p>
         </a>
         <p class="nickname">Y & M</p>
-        <p class="summary">999天99小时99分99秒</p>
+        <!-- <p class="summary">999天99小时99分99秒</p> -->
+        <p class="summary">{{date}}</p>
       </div>
       <div class="item_wrap">
         <ul>
@@ -49,12 +50,44 @@ export default {
       default: false
     }
   },
-  data(){
+  data() {
     return {
+      date: ""
     };
   },
-  mathods: {
-    changeMenuStateClose(){
+  created() {
+    var together = new Date();
+    together.setFullYear(2018, 3, 18);
+    together.setHours(18);
+    together.setMinutes(30);
+    together.setSeconds(0);
+    together.setMilliseconds(0);
+    this.timeElapse(together);
+  },
+  methods: {
+    changeMenuStateClose() {},
+    timeElapse(dateTim) {
+      var current = Date();
+      var seconds = (Date.parse(current) - Date.parse(dateTim)) / 1000;
+      var days = Math.floor(seconds / (3600 * 24));
+      seconds = seconds % (3600 * 24);
+      var hours = Math.floor(seconds / 3600);
+      if (hours < 10) {
+        hours = "0" + hours;
+      }
+      seconds = seconds % 3600;
+      var minutes = Math.floor(seconds / 60);
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      seconds = seconds % 60;
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      var result =
+        "第" + days + "天" + hours + "小时" + minutes + "分钟" + seconds + "秒";
+      this.date = result;
+      console.log(result);
     }
   }
 };
@@ -113,7 +146,7 @@ export default {
       background-color: #fff;
     }
     .nickname {
-      margin: 0.12rem 0rem 0.10rem;
+      margin: 0.12rem 0rem 0.1rem;
       font-size: 0.11rem;
       font-weight: bold;
     }
@@ -124,7 +157,7 @@ export default {
   // item_wrap
   .item_wrap {
     li {
-      padding: 0.12rem 0.20rem;
+      padding: 0.12rem 0.2rem;
       font-size: 0.14rem;
       border-bottom: 0.01rem solid #ccc;
       img {
