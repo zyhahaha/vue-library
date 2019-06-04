@@ -1,7 +1,24 @@
 <template>
   <div class="list-page">
     <ul>
+      <p>test</p>
       <li @click="$router.push('/address')">address</li>
+      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/menu')">menu</li>
+    </ul>
+    <ul>
+      <p>test</p>
+      <li @click="$router.push('/address')">address</li>
+      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/menu')">menu</li>
+    </ul>
+    <ul>
+      <p>test</p>
+      <li @click="$router.push('/address')">address</li>
+      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/menu')">menu</li>
       <li @click="$router.push('/menu')">menu</li>
     </ul>
   </div>
@@ -25,11 +42,20 @@ export default {
 
 <style lang="less" scoped>
   .list-page {
-    font-size: 0.16rem;
+    height: 100%;
+    background-color: #f5f5f5;
+    font-size: 0.32rem;
     ul {
-      padding: 0.5rem;
+      // padding: 0.5rem;
+      p{
+        padding: 0.2rem 0rem;
+        font-size: 0.36rem;
+      }
       li{
-        padding-bottom: 0.2rem;
+        padding: 0.2rem 0rem;
+        padding-left: 0.5rem;
+        text-align: left;
+        background-color: #fff;
       }
     }
   }
