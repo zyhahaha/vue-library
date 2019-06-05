@@ -5,7 +5,7 @@
       <div style="float: right;">
         <input
           style="opacity: 0; height: 100%; position: absolute;"
-          onchange="upload(this.files)"
+          @change="upload($event)"
           type="file"
           name
           id="avatar-updata"
@@ -18,14 +18,39 @@
 </template>
 
 <script>
+import CutImg from 'cut-img-filesize';
+import axios from 'axios';
 export default {
   name: "upload",
   components: {},
   data: () => {
     return {};
   },
+  created(){
+  },
   methods: {
-    showMenu() {}
+    upload(e) {
+      let file = e.target.files[0];
+      let formData = new FormData();
+      formData.append('file', file);
+      formData.append('name', 'test');
+      this.uploadService(formData);
+
+      // let params = {
+      //   file: file,
+      //   max: 140
+      // };
+      // let cutImg = new CutImg();
+      // cutImg.cut(params).then(res => {
+      //   let avatarImgEl = document.getElementsByClassName('header-logo')[0];
+      //   avatarImgEl.src = window.URL.createObjectURL(res);
+      // });
+    },
+    uploadService(formData){
+      axios.post('/api/upload', formData).then(res => {
+        console.log(res);
+      })
+    }
   }
 };
 </script>
