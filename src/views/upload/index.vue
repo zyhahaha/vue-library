@@ -1,19 +1,17 @@
 <template>
   <div class="update-info">
-    <div style="padding-left: 0.2rem; background: #fff;">
-      <div class="header">
-        <p style="float: left;">头像</p>
-        <div style="float: right;">
-          <input
-            style="opacity: 0; height: 100%; position: absolute;"
-            onchange="upload(this.files)"
-            type="file"
-            name
-            id="avatar-updata"
-          >
-          <img src="./images/default_head.png" class="header-logo">
-          <img src="./images/arrow.png" class="arrow">
-        </div>
+    <div class="header">
+      <p style="float: left;">头像</p>
+      <div style="float: right;">
+        <input
+          style="opacity: 0; height: 100%; position: absolute;"
+          onchange="upload(this.files)"
+          type="file"
+          name
+          id="avatar-updata"
+        >
+        <img src="./images/default_head.png" class="header-logo">
+        <img src="./images/arrow.png" class="arrow">
       </div>
     </div>
   </div>
@@ -38,15 +36,13 @@ export default {
   padding-top: 10px;
   background-color: #f5f5f5;
   font-size: 16px;
-  z-index: 400;
 }
 .update-info .header {
-  width: 100%;
   height: 88px;
   line-height: 88px;
   background: #fff;
+  padding-left: 0.2rem;
   padding-right: 15px;
-  position: relative;
 }
 .update-info .header .header-logo {
   width: 64px;
@@ -60,6 +56,5 @@ export default {
   height: 13px;
   vertical-align: middle;
 }
-
 </style>
 
