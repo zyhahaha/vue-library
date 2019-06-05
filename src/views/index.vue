@@ -4,8 +4,8 @@
       <p>test</p>
       <li @click="$router.push('/address')">address</li>
       <li @click="$router.push('/menu')">menu</li>
-      <li @click="$router.push('/menu')">menu</li>
-      <li @click="$router.push('/menu')">menu</li>
+      <li @click="$router.push('/upload')">upload</li>
+      <li @click="$router.push('/upload')">upload</li>
     </ul>
     <ul>
       <p>test</p>
