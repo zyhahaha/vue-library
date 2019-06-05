@@ -18,22 +18,21 @@
 </template>
 
 <script>
-import CutImg from 'cut-img-filesize';
-import axios from 'axios';
+import CutImg from "cut-img-filesize";
+import axios from "axios";
 export default {
   name: "upload",
   components: {},
   data: () => {
     return {};
   },
-  created(){
-  },
+  created() {},
   methods: {
     upload(e) {
       let file = e.target.files[0];
       let formData = new FormData();
-      formData.append('file', file);
-      formData.append('name', 'test');
+      formData.append("file", file);
+      formData.append("name", "test");
       this.uploadService(formData);
 
       // let params = {
@@ -46,10 +45,10 @@ export default {
       //   avatarImgEl.src = window.URL.createObjectURL(res);
       // });
     },
-    uploadService(formData){
-      axios.post('/api/upload', formData).then(res => {
+    uploadService(formData) {
+      axios.post("/api/upload", formData).then(res => {
         console.log(res);
-      })
+      });
     }
   }
 };
