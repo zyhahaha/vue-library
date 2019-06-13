@@ -41,9 +41,11 @@
 </template>
 
 <script>
+import testMixin from '@/mixin/test.mixin.js';
 export default {
   name: "homeMenu",
   components: {},
+  mixins: [testMixin],
   props: {
     isShowMenu: {
       type: Boolean,
