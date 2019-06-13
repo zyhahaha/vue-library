@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import testMixin from '@/mixin/test.mixin.js';
+import testMixin from "@/mixin/test.mixin.js";
 export default {
   name: "homeMenu",
   components: {},
@@ -56,6 +56,11 @@ export default {
     return {
       date: ""
     };
+  },
+  computed: {
+    // ...mapGetters({
+    //   GOODS_INFO: "GOODS_INFO"
+    // })
   },
   created() {
     var together = new Date();
